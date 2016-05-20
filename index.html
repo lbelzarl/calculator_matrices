@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Калькулятор матриц</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>
+            <h1>Калькулятор умножения матриц</h1>
+        </header>
+        <main>
+            <section class="constructor">
+                <div class="multiply">
+                    <button class="multiply-btn">Умножить матрицы</button>
+                </div>
+                <div class="empty-swap">
+                    <button class="empty">Очистить матрицы</button>
+                    <button class="swap">Поменять матрицы местами</button>
+                </div>
+                <div class="add-remove">
+                    <div>
+                        <label>
+                            <input type="radio" name="matrix" class="check">
+                            <span>Матрица А</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="matrix" class="check">
+                            <span>Матрица В</span>
+                        </label>
+                    </div>
+                    <div>
+                        <button class="add-row">Добавить</button>
+                        <button class="remove-row">Удалить</button>
+                        <span>Строку</span>
+                    </div>
+                    <div>
+                        <button class="add-column">Добавить</button>
+                        <button class="remove-column">Удалить</button>
+                        <span>Столбец</span>
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                <div class="matrix-a">
+                    <div class="wrap">
+                        <div class="row">
+                            <input type="text" data-matrix="a" data-row="1" data-column="1">
+                            <input type="text" data-matrix="a" data-row="1" data-column="2">
+                        </div>
+                        <div class="row">
+                            <input type="text" data-matrix="a" data-row="2" data-column="1">
+                            <input type="text" data-matrix="a" data-row="2" data-column="2">
+                        </div>
+                    </div>
+                    <span>Матрица А</span>
+                </div>
+                <div class="matrix-b">
+                    <div class="wrap">
+                        <div class="row">
+                            <input type="text" data-matrix="b" data-row="1" data-column="1">
+                            <input type="text" data-matrix="b" data-row="1" data-column="2">
+                        </div>
+                        <div class="row">
+                            <input type="text" data-matrix="b" data-row="2" data-column="1">
+                            <input type="text" data-matrix="b" data-row="2" data-column="2">
+                        </div>
+                    </div>
+                    <span>Матрица В</span>
+                </div>
+                <div class="matrix-c"></div>
+            </section>
+        </main>
+        <footer>
+            <p>lbelzarl production</p>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>
