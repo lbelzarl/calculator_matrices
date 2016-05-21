@@ -1,6 +1,4 @@
-var btn = document.querySelector('.multiply-btn');
-
-btn.addEventListener('click', function(e) {
+$('.multiply-btn').on('click', function(e) {
 	var row = $('.matrix-a .row').length,
 		column = $('.matrix-b input').length / $('.matrix-b .row').length, 
 		A = $('.matrix-a input'),	// массив всех значений матрицы А
@@ -18,38 +16,55 @@ btn.addEventListener('click', function(e) {
 	// Выводим матрицу С.
 	$('.matrix-c').empty();
 	$('<div class="wrap"></div>').appendTo('.matrix-c')
-	
+
 	for (var i = 1, k = 0; i <= row; i++) {
 		var div = $('<div class="row"></div>');
-		div.appendTo('.matrix-c .wrap');
 
 		for (var j = 1; j <= column; j++) {
 			div.append('<input type="text" value="' + matrixC[k++] + '" disabled>');
 		}
+
+		div.appendTo('.matrix-c .wrap');
 	}
 });
 
-	// var	check = '.' + $('input:radio:checked').val(),
-	// if (e.target.classList.contains('add-row')) {
+$('.add-remove').on('click', function(e) {
+	var	check = '.' + $('input:radio:checked').val(),
+		row = $(check + ' .row'),
+		column = $(check + ' input').length / row.length;
+
+	// Добавляет строку выбранной матрице
+	if (e.target.classList.contains('add-row')) {
+		var div = $('<div class="row"></div>');
 		
-	// 	return;
-	// }
+		for (var i = 0; i < column; i++) {
+			div.append('<input type="text">');
+		}
 
-	// if (e.target.classList.contains('remove-row')) {
-	// 	//
-	// 	return; 
-	// }
+		div.appendTo(check + ' .wrap');
+		return;
+	}
 
-	// if (e.target.classList.contains('add-column')) {
-	// 	//
-	// 	return;
-	// }
+	// Удаляет строку выбранной матрицы
+	if (e.target.classList.contains('remove-row')) {
+		 
+		return;
+	}
 
-	// if (e.target.classList.contains('remove-column')) {
-	// 	//
-	// 	return; 
-	// }
+	// Добавляет столбец выбранной матрице 
+	if (e.target.classList.contains('add-column')) {
+		for (var i = 0; i < row.length; i++) {
+			$('<input type="text">').appendTo(row[i]);
+		}
+		return;
+	}
 
+	// Удаляет столбец выбранной матрицы
+	if (e.target.classList.contains('remove-column')) {
+		//
+		return; 
+	}
+});
 
 
 // function add-row() {
